@@ -1,4 +1,5 @@
 import logging
+import os
 
 import click
 
@@ -22,11 +23,13 @@ def word2vec():
 @click.option("--lr", default=0.005, help="Initial step size of gradient descent")
 @click.option("--embed-dim", default=100, help="Embedding dimension")
 @click.option("--epochs", default=1, help="Numbrt of cycles through the full training data")
-@click.option("--model-dir", default="/tmp", help="Fold to save the model")
+@click.option("--model-dir", default="/tmp/model", help="Fold to save the model")
 @click.option("--debug", default=False, help="Whether to output debug messages")
 def train(data_path, min_count, window_size, batch_size, n_negs, lr, embed_dim, epochs, model_dir, debug):
     log_level = logging.DEBUG if debug else logging.INFO
     logging.basicConfig(level=log_level, format=LOG_FORMAT)
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
     w2v = Word2vec(
         data_path,
         min_count=min_count,

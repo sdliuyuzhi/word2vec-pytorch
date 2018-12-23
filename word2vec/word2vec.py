@@ -1,4 +1,5 @@
 import logging
+from os import path
 
 import torch
 from torch.utils.data import DataLoader
@@ -67,3 +68,17 @@ class Word2vec:
                 loss.backward()
                 optim.step()
                 pbar.set_postfix(loss=loss.item())
+
+        vectors = model.wi.weight.data.cpu().numpy()
+        vec_out_path = path.join(self.model_dir, "vector.txt")
+        with open(vec_out_path, "w") as ws:
+            for vec in vectors:
+                ws.write(" ".join(["{:5.6f}".format(x) for x in vec]))
+                ws.write("\n")
+        logger.info(f"Saved vectors to {vec_out_path}")
+        model_out_path = path.join(self.model_dir, "model.state")
+        torch.save(model.state_dict(), model_out_path)
+        logger.info(f"Saved model to {model_out_path}")
+        optim_out_path = path.join(self.model_dir, "optim.state")
+        torch.save(optim.state_dict(), optim_out_path)
+        logger.info(f"Saved optim params to {optim_out_path}")
