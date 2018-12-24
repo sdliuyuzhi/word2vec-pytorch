@@ -1,3 +1,8 @@
+# README for travis-lab
+
+[![Build status](https://travis-ci.org/USERNAME/travis-lab.svg?master)](https://travis-ci.org/sdliuyuzhi)
+
+
 # word2vec-pytorch
 
 Implement word2vec (skipgram) with negative sampling/sub sampling using pytorch.
@@ -24,6 +29,3 @@ word2vec train --help
 ## Development
 
 
-# README for travis-lab
-
-[![Build status](https://travis-ci.org/USERNAME/travis-lab.svg?master)](https://travis-ci.org/USERNAME)
