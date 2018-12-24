@@ -97,4 +97,6 @@ docs/source/generated
 target/
 
 # swap files
-.*.sw?
+~
+*.swp
+*.swo
