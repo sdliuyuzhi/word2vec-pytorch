@@ -11,5 +11,5 @@ pytest
 pytest-pythonpath
 
 # Coverage statistics
-pytest-cov
-codecov
+#pytest-cov
+#codecov
