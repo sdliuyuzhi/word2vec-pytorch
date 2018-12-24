@@ -95,3 +95,8 @@ docs/source/generated
 
 # PyBuilder
 target/
+
+# swap files
+~
+*.swp
+*.swo
