@@ -18,7 +18,7 @@ class SkipGram(nn.Module):
         self.wo.weight.data.uniform_(-r, r)
         self.wi.weight.requires_grad = True
         self.wo.weight.requires_grad = True
-    
+
     def forward(self, center, contexts, neg_samples):
 
         neg_samples = neg_samples.long()
