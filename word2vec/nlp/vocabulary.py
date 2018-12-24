@@ -1,4 +1,3 @@
-
 from word2vec.nlp.tokenizer import UNK
 
 
@@ -13,7 +12,7 @@ class Vocabulary:
         self.idx2word = {}
         self.word_frequency = {}
         self.add_word(UNK)
-    
+
     def add_word(self, word, ct=1):
         if not (word in self.word2idx):
             self.word2idx[word] = self.idx
