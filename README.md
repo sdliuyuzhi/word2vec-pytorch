@@ -9,17 +9,25 @@ Setup a virtual env locally using `venv` or `virtualenv` and install dependency.
 python3 -m venv venv
 source venv/bin/activate
 pip install -e .
+
 ```
 
 Prepare corpus (text) in the format of one sentence (or paragraph) per line. Train word2vec using command line
 ```bash
 word2vec train --data-path //path/to/your/corpus.txt --batch-size 300 --lr 0.01
+
 ```
 
 For more information of the training parameters, try
 ```bash
 word2vec train --help
+
 ```
 
 ## Development
 
+Tests
+```bash
+python setup.py nosetests
+
+```
