@@ -4,7 +4,7 @@
 # The behavior of the script is controlled by environment variabled defined
 # in the .travis.yml in the top level folder of the project.
 
-set -e
+set -ev
 
 python --version
 
